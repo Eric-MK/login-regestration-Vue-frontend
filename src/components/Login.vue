@@ -29,7 +29,7 @@
    <script default>
        //import Vue from 'vue';
        import axios from 'axios';
-   
+        
      //Vue.use(axios)
      export default {
        // eslint-disable-next-line vue/multi-word-component-names
@@ -58,7 +58,7 @@
                   try {
                   if (data.status === true) {
                         alert("Login Successfully"); 
-                        this.$router.push({ name: 'HelloWorld' })
+                        this.$router.push({ name: 'home' })
                         } else {
                         alert("Login failed")
                         }
