@@ -29,9 +29,9 @@ data object. When the user enters data into the input fields, the student data o
     </template>
        
        <script>
-           import Vue from 'vue';
+          // import Vue from 'vue';
            import axios from 'axios';
-           Vue.use(axios)
+           //Vue.use(axios);
 
          export default {
            // eslint-disable-next-line vue/multi-word-component-names
