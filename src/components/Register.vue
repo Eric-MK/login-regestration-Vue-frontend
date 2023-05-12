@@ -1,10 +1,13 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
 
     <div class="card" align="left">
             <div class="card-header">Register Form</div>
             <div class="card-body"> 
-            
-                <form  @submit.prevent="saveData">
+            <!-- //The v-model directive is used to bind the form input fields to the student
+data object. When the user enters data into the input fields, the student data object is updated.
+              -->   
+              <form  @submit.prevent="saveData"><!-- The @submit.prevent directive is used to prevent the default form submission behavior and call the saveData method -->
                 
                 <label>First Name</label>
                 <input type="text" v-model="student.name" name="name" id="name" class ="form-control"/> 
@@ -31,6 +34,7 @@
            Vue.use(axios)
 
          export default {
+           // eslint-disable-next-line vue/multi-word-component-names
            name: 'Register',
            data () {
              return {
@@ -50,11 +54,12 @@
            methods: {
                   saveData()
                   {
-                   axios.post("http://127.0.0.1:8000/api/register", this.student)
+                   axios.post("http://127.0.0.1:8000/api/register", this.student)/* The axios.post method takes two arguments: the URL of the server endpoint and the data to be sent to the server. */
                    .then(
                      ({data})=>{
                       console.log(data);
-                       try 
+                       try /*  If the server responds with an error status code, the catch method is called,
+and an alert is displayed to indicate that the data could not be saved. */
                          {
                             alert("saveddddd");
                             
